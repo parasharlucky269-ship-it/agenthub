@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .border-border {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Animations for SignIn component */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideRightIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0px);
+  }
+}
+
+@keyframes testimonialIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@utility animate-element {
+  opacity: 0;
+  animation: fadeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animate-slide-right {
+  opacity: 0;
+  animation: slideRightIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animate-testimonial {
+  opacity: 0;
+  animation: testimonialIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animate-delay-100 { animation-delay: 100ms; }
+@utility animate-delay-200 { animation-delay: 200ms; }
+@utility animate-delay-300 { animation-delay: 300ms; }
+@utility animate-delay-400 { animation-delay: 400ms; }
+@utility animate-delay-500 { animation-delay: 500ms; }
+@utility animate-delay-600 { animation-delay: 600ms; }
+@utility animate-delay-700 { animation-delay: 700ms; }
+@utility animate-delay-800 { animation-delay: 800ms; }
+@utility animate-delay-900 { animation-delay: 900ms; }
+@utility animate-delay-1000 { animation-delay: 1000ms; }
+@utility animate-delay-1200 { animation-delay: 1200ms; }
+@utility animate-delay-1400 { animation-delay: 1400ms; }
